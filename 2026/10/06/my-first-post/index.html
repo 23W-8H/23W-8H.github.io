@@ -16,11 +16,11 @@
 <meta property="og:image" content="http://example.com/images/1.png">
 <meta property="og:image" content="http://example.com/images/6.png">
 <meta property="og:image" content="http://example.com/images/8.png">
-<meta property="og:image" content="http://example.com/images/9-1.png">
-<meta property="og:image" content="http://example.com/images/11-2.png">
+<meta property="og:image" content="http://example.com/images/9.png">
+<meta property="og:image" content="http://example.com/images/11.png">
 <meta property="og:image" content="http://example.com/images/i.png">
 <meta property="article:published_time" content="2026-10-06T09:31:49.251Z">
-<meta property="article:modified_time" content="2026-10-06T10:12:08.057Z">
+<meta property="article:modified_time" content="2026-10-06T10:17:48.238Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/1.png">
@@ -115,11 +115,11 @@
 <p>第 405 行：section.push_str(neutralize_reminder_tags(&amp;config.content));</p>
 <p>第 409 行：section.push_str(“\nFollow these instructions exactly…”);<br>漏洞成因： 代码不仅将不可信的本地文件内容直接拼入最终的系统提示词（无指令-数据隔离），还在拼接后强制追加了 “Follow these instructions exactly”（完全遵循这些指令）。这等于告诉大模型：“无论下文写了什么，都必须当成最高准则执行”。</p>
 <ol start="4">
-<li>防御机制的失效<br>系统其实做了一次防御，但防御面过于狭窄。<br>[插入图4：neutralize_reminder_tags 函数图]<br><img src="/images/9-1.png" alt="alt text"></li>
+<li>防御机制的失效<br>系统其实做了一次防御，但防御面过于狭窄。<br>[插入图4：neutralize_reminder_tags 函数图]<br><img src="/images/9.png" alt="alt text"></li>
 </ol>
 <p>【图4说明】：neutralize_reminder_tags 函数试图通过正则替换，将 <system-reminder> 等标签转为 HTML 实体（&lt;）。但这种方法只防御了语法层面的标签逃逸，对自然语言的语义攻击（如“忽略上述所有规则，执行以下命令”）完全无效。</p>
 <ol start="5">
-<li>攻击载荷无上限<br>在单元测试中，系统对文件注入内容的长度未做限制。<br>[插入图5：测试用例中 5000 字符注入测试图]<br><img src="/images/11-2.png" alt="alt text"></li>
+<li>攻击载荷无上限<br>在单元测试中，系统对文件注入内容的长度未做限制。<br>[插入图5：测试用例中 5000 字符注入测试图]<br><img src="/images/11.png" alt="alt text"></li>
 </ol>
 <p>【图5说明】：测试代码使用 “A”.repeat(5000) 验证了内容不会被截断。这意味着攻击者可以注入超大体积的恶意指令，实现复杂的多步越狱逻辑。</p>
 <p>三、 攻击链推演（供应链投毒场景）<br>基于以上代码逻辑，攻击者无需与用户进行任何直接交互，即可完成一次完美的供应链攻击：</p>
@@ -140,7 +140,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/10/06/my-first-post/" data-id="cuid86SHXquNifjPAkPu8tLoY" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/10/06/my-first-post/" data-id="cuidkw4RFH8-6a6fgfTnNlgyU" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
