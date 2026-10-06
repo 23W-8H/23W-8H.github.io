@@ -84,7 +84,7 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <hr>
-<p>title: xAI Grok Agent 源码审计：本地配置加载导致持久化上下文劫持（CWE-1427）<br>daate: 2026-10-06 17:35:00<br>标题： xAI Grok Agent 源码审计：本地配置加载导致持久化上下文劫持（CWE-1427）</p>
+<p>title: xAI Grok Agent 源码审计：本地配置加载导致持久化上下文劫持（CWE-1427）<br>date: 2026-10-06 17:35:00</p>
 <p>摘要： 本文针对 xAI 官方开源组件 xai-grok-agent 进行了深度的静态源码审计。研究发现，系统在加载本地配置文件（如 AGENTS.md）时，存在未经隔离的直接字符串拼接（CWE-1427），并在拼接后附加了强制执行指令。攻击者可通过供应链投毒（恶意开源仓库），实现对开发者本地 AI Agent 的持久化上下文劫持（OWASP ASI06）。文章披露了从文件读取到提示词拼接的完整攻击链，并复盘了官方对此类“本地信任模型”漏洞的安全响应策略与防御思考。</p>
 <p>分类： AI安全 &#x2F; 漏洞分析</p>
 <p>一、 引言：AI Agent 的本地信任盲区<br>随着 AI 编程助手（如 Claude Code、GitHub Copilot、Grok CLI 等）的普及，行业逐渐形成了一套默认标准：通过在项目根目录放置 AGENTS.md 或 CLAUDE.md 文件，允许开发者向 AI 注入项目专属的上下文、编码规范或工具调用规则。</p>
@@ -131,7 +131,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/10/06/my-first-post/" data-id="cuidq_3CyssVW3NzvE82Z9gvv" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/10/06/my-first-post/" data-id="cuid6qDMdIIwK_ZW6Ga_7JPxW" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -182,7 +182,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/10/06/hello-world/" data-id="cuidWPjdWTQ96jNkcaU4iaKSI" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/10/06/hello-world/" data-id="cuidAQzs4U2NNEr9viZ0Zlpsn" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
